@@ -1,0 +1,28 @@
+#!/bin/sh
+
+NOME_LOG2=log.log2
+export NOME_LOG2
+path_log2=$1/$NOME_LOG2
+
+if	[ -z $1 ]
+then
+	echo "Você deve passar um parâmetro para esse script"
+	echo "Exemplo: $0 caminho->/home/usuário"
+	exit
+fi
+
+if	[ "$1" = "ajuda" ] || [ "$2" = "ajuda" ]
+then
+	echo "################################################"
+	echo "O script foi desenvolvido por JEFFERSON"
+	echo "O modo correto de usar o script:"
+	echo "Exemplo:$0 caminho-> /home/usuário"
+	echo "Preferenciamente use ajuda no segundo parâmetro"
+	echo "Exemplo: ./aula1shell.sh /home/usuário ajuda"
+	echo "################################################"
+	exit;
+fi
+
+echo "Você escolheu o diretório $1 para salva o LOG"
+echo "O caminho completo do log será:$path_log2" 
+echo "A quantidade de parâmetros digitada é:$#"
